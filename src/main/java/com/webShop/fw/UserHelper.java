@@ -45,4 +45,24 @@ public class UserHelper extends BaseHelper{
   public void clickOnRegisterButton() {
     click(By.id("register-button"));
   }
+
+  public void clickOnLoginLink() { //
+    if(!isElementPresent(By.cssSelector(".ico-login"))){
+      click(By.cssSelector(".ico-logout"));
+    }
+    click(By.cssSelector(".ico-login"));
+  }
+
+  public void fillOnLoginForm(String email, String password) {
+    type(By.id("Email"), email);
+    type(By.id("Password"), password);
+  }
+
+  public void clickOnLoginButton() {
+    click(By.xpath("//*[@class='button-1 login-button']"));
+  }
+
+  public boolean isLogOutLinkPresent() {
+    return isElementPresent(By.cssSelector(".ico-logout"));
+  }
 }
